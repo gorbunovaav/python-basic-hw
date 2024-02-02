@@ -1,8 +1,8 @@
-import base
-import exceptions
+from homework_02.base import Vehicle
+from homework_02.exceptions import CargoOverload
 
 
-class Plane(base.Vehicle):
+class Plane(Vehicle):
     cargo = 0
     max_cargo = 0
 
@@ -15,7 +15,7 @@ class Plane(base.Vehicle):
             return self.cargo
         else:
             msg = "Too much cargo"
-            raise exceptions.CargoOverload(msg)
+            raise CargoOverload(msg)
 
     def remove_all_cargo(self):
         cargo_before = self.cargo

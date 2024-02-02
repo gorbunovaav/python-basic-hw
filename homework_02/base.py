@@ -1,4 +1,4 @@
-import exceptions
+from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 
 class Vehicle:
@@ -13,12 +13,13 @@ class Vehicle:
         self.fuel_consumption = fuel_consumption
 
     def start(self, started):
-        if not started and self.fuel > 0:
-            started = True
+        if not started:
+            if self.fuel > 0:
+                started = True
             return started
         else:
             msg = "No fuel :("
-            raise exceptions.LowFuelError(msg)
+            raise LowFuelError(msg)
 
     def move(self, distance):
         required_fuel = self.fuel_consumption * distance
@@ -27,6 +28,6 @@ class Vehicle:
             return self.fuel
         else:
             msg = "Not enough fuel :("
-            raise exceptions.NotEnoughFuel(msg)
+            raise NotEnoughFuel(msg)
 
 

@@ -1,15 +1,13 @@
-import base
-import engine as eng
+from homework_02.base import Vehicle
+from homework_02.engine import Engine
 
 
-class Car(base.Vehicle):
-    def __init__(self, engine):
-        self.engine = engine
+class Car(Vehicle):
+    engine = 0
 
-    # a = eng.Engine(0, 0)
-    #
-    # def set_engine(self, a):
-    #     a = Car()
+    def set_engine(self):
+        self.engine = Engine()
+        return self.engine
 
 
 
