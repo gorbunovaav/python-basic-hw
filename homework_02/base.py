@@ -1,7 +1,8 @@
+from abc import ABC
 from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 
-class Vehicle:
+class Vehicle(ABC):
     started = True
     weight = 0
     fuel = 0
