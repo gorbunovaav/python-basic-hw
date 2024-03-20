@@ -1,4 +1,5 @@
-FROM python:3.9-buster
+#docker run -it -p 8000:8000 web
+FROM python:3.10-bullseye
 
 WORKDIR /var/app
 
@@ -10,7 +11,7 @@ RUN poetry install --no-root
 
 COPY app.py ./
 
-CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--port=8000"]
+CMD ["uvicorn", "app:app", "--host=0.0.0.0", "--port=8000"]
 
 
 
