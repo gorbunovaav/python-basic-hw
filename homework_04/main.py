@@ -21,7 +21,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import joinedload, selectinload
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from models import User, Post
+from models import User, Post, Base
 from models.db_async import engine, async_session
 
 async def async_main():
