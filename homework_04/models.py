@@ -14,7 +14,7 @@ from sqlalchemy.ext.asyncio import(
     async_sessionmaker,
     AsyncSession
 )
-from sqlalchemy.orm import DeclarativeBase, declared_attr
+from sqlalchemy.orm import DeclarativeBase, declared_attr, Mapped, mapped_column
 from sqlalchemy import MetaData
 
 PG_CONN_URI = os.environ.get("SQLALCHEMY_PG_CONN_URI") or "postgresql+asyncpg://postgres:password@localhost/postgres"
