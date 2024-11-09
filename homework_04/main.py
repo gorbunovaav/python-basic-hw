@@ -39,10 +39,10 @@ async def create_user(
         username=username,
         email=email,
     )
-    session.add(user)
+    session.add(owner)
     await session.commit()
     # await session.refresh(owner)
-    return user
+    return owner
 
 async def create_post(
     session: AsyncSession,
